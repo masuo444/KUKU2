@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>KUKU - 世界80億人と創るオープンIP</title>
-    <meta name="title" content="KUKU - 世界80億人と創るオープンIP">
-    <meta name="description" content="誰でも自由に使えるキャラクター。二次創作OK・商用利用OK・収益化OK。手描きでもAIでも歓迎。">
+    <title>KUKU - An Open IP Co-Created by 8 Billion People</title>
+    <meta name="title" content="KUKU - An Open IP Co-Created by 8 Billion People">
+    <meta name="description" content="Characters that anyone can use freely. Fan works OK · Commercial use OK · Monetization OK. Hand-drawn or AI - all are welcome.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
             line-height: 1.6;
             color: #333;
             background: #ffffff;
@@ -499,7 +499,7 @@
         }
 
         @media (max-width: 768px) {
-            /* Header - スマホ最適化 */
+            /* Header - Mobile optimization */
             .header {
                 padding: 0.75rem 0;
             }
@@ -513,7 +513,7 @@
                 font-size: 0.85rem;
             }
 
-            /* Hero - スマホ最適化 */
+            /* Hero - Mobile optimization */
             .hero {
                 padding: 3rem 1rem 2rem;
             }
@@ -546,7 +546,7 @@
                 max-width: 280px;
             }
 
-            /* Section共通 - スマホ最適化 */
+            /* Section common - Mobile optimization */
             .about, .characters, .steps, .contest, .cta-section {
                 padding: 2.5rem 1rem;
             }
@@ -560,7 +560,7 @@
                 font-size: 0.95rem;
             }
 
-            /* About Grid - スマホは1列表示 */
+            /* About Grid - Single column on mobile */
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -574,7 +574,7 @@
                 font-size: 2.5rem;
             }
 
-            /* Characters - スマホは2列表示 */
+            /* Characters - 2 columns on mobile */
             .characters-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.75rem;
@@ -592,13 +592,13 @@
                 font-size: 1.1rem;
             }
 
-            /* World Videos - スマホは1列表示 */
+            /* World Videos - Single column on mobile */
             div[style*="grid-template-columns: repeat(auto-fit"] {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
 
-            /* Steps Grid - スマホは1列表示 */
+            /* Steps Grid - Single column on mobile */
             .steps-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -614,7 +614,7 @@
                 font-size: 1.5rem;
             }
 
-            /* Contest Card - スマホ最適化 */
+            /* Contest Card - Mobile optimization */
             .contest-card {
                 padding: 2rem 1.5rem;
             }
@@ -633,7 +633,7 @@
                 width: 100%;
             }
 
-            /* CTA Buttons - スマホ最適化 */
+            /* CTA Buttons - Mobile optimization */
             .cta-buttons {
                 flex-direction: column;
                 align-items: stretch;
@@ -646,13 +646,13 @@
                 font-size: 1rem;
             }
 
-            /* Footer - スマホ最適化 */
+            /* Footer - Mobile optimization */
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
             }
 
-            /* Modal - スマホ最適化 */
+            /* Modal - Mobile optimization */
             .modal-content {
                 margin: 5% auto;
                 padding: 1.5rem 1rem;
@@ -685,7 +685,7 @@
                 margin-bottom: 1.5rem;
             }
 
-            /* ダウンロードボタン - スマホ最適化 */
+            /* Download button - Mobile optimization */
             a[download] {
                 font-size: 0.95rem !important;
                 padding: 1rem 1.5rem !important;
@@ -697,19 +697,19 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <img src="public/assets/KUKU_logo.png" alt="KUKU" class="logo">
+            <img src="../public/assets/KUKU_logo.png" alt="KUKU" class="logo">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <div class="language-selector" style="position: relative;">
                     <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                        🌐 日本語
+                        🌐 English
                     </button>
                     <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
-                        <a href="index.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
-                        <a href="en/index.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+                        <a href="../index.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇯🇵 日本語</a>
+                        <a href="index.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇬🇧 English</a>
                         <a href="fr/index.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
                     </div>
                 </div>
-                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">コミュニティに参加</a>
+                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">Join Community</a>
             </div>
         </div>
     </header>
@@ -717,15 +717,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>世界の80億人で育てる<br>新しいキャラクタープロジェクト<span class="highlight">「KUKU」</span></h1>
-            <p>誰でも自由に使えるキャラクター。二次創作OK・商用利用OK・収益化OK。<br>手描きでも、AIでも、どんな方法でも歓迎します。</p>
+            <h1><span class="highlight">KUKU:</span> A New Character Project<br>Co-Created by 8 Billion People</h1>
+            <p>Characters that anyone can use freely. Fan works OK · Commercial use OK · Monetization OK.<br>Hand-drawn, AI, or any method - all are welcome.</p>
 
             <iframe class="hero-video" src="https://www.youtube.com/embed/tQoT6o2RO6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="aspect-ratio: 16/9; height: auto;"></iframe>
 
             <div class="hero-features">
-                <div class="feature-badge">✓ 二次創作OK</div>
-                <div class="feature-badge">✓ 商用利用OK</div>
-                <div class="feature-badge">✓ AI活用歓迎</div>
+                <div class="feature-badge">✓ Fan Works OK</div>
+                <div class="feature-badge">✓ Commercial Use OK</div>
+                <div class="feature-badge">✓ AI Welcome</div>
             </div>
         </div>
     </section>
@@ -733,28 +733,28 @@
     <!-- About Section -->
     <section class="about">
         <div class="container">
-            <h2 class="section-title">KUKUとは？</h2>
+            <h2 class="section-title">What is KUKU?</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.8;">
-                <strong>KUKU（クク）</strong>は、世界中の誰でも自由に使える<strong>キャラクターと物語の世界</strong>です。<br>
-                舞台は、木々と光が共に生きる場所——<strong>「樹木の里（The Tree Village）」</strong>。<br>
-                手描きでも、AIでも、どんな方法でも、この世界に参加できます。
+                <strong>KUKU</strong> is a <strong>character and story world</strong> that anyone in the world can use freely.<br>
+                The setting is a place where trees and light live together—<strong>"The Tree Village"</strong>.<br>
+                Whether hand-drawn or AI, you can participate in this world in any way.
             </p>
 
             <div class="about-grid">
                 <div class="about-card">
                     <span class="emoji">🌿</span>
-                    <h3>オープン提供</h3>
-                    <p>キャラクターと世界観を誰でも自由に利用・創作できます</p>
+                    <h3>Open Access</h3>
+                    <p>Characters and world settings are freely available for anyone to use and create with</p>
                 </div>
                 <div class="about-card">
                     <span class="emoji">🎨</span>
-                    <h3>すべての表現を歓迎</h3>
-                    <p>AI・手描き・写真・音楽・映像など、スタイルは問いません</p>
+                    <h3>All Expressions Welcome</h3>
+                    <p>AI, hand-drawn, photography, music, video - no style restrictions</p>
                 </div>
                 <div class="about-card">
                     <span class="emoji">💰</span>
-                    <h3>収益化OK</h3>
-                    <p>ガイドラインの範囲内で、あなたの作品として収益化できます</p>
+                    <h3>Monetization OK</h3>
+                    <p>Within guideline limits, you can monetize your works as your own creation</p>
                 </div>
             </div>
         </div>
@@ -763,54 +763,54 @@
     <!-- Characters Section -->
     <section class="characters">
         <div class="container">
-            <h2 class="section-title">6人のキャラクター</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">それぞれ個性豊かなキャラクターたち。自由に使って、あなたの物語を創造しよう</p>
+            <h2 class="section-title">6 Characters</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Each with unique personalities. Use them freely to create your own stories</p>
 
             <div class="characters-grid">
                 <div class="character-card">
-                    <img src="public/assets/characters/ヒノキ.JPG" alt="ヒノキ" class="character-image">
+                    <img src="../public/assets/characters/ヒノキ.JPG" alt="Hinoki" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">ヒノキ</div>
+                        <div class="character-name">Hinoki</div>
                     </div>
                 </div>
                 <div class="character-card">
-                    <img src="public/assets/characters/サクラ.JPG" alt="サクラ" class="character-image">
+                    <img src="../public/assets/characters/サクラ.JPG" alt="Sakura" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">サクラ</div>
+                        <div class="character-name">Sakura</div>
                     </div>
                 </div>
                 <div class="character-card">
-                    <img src="public/assets/characters/ミズキ.jpg" alt="ミズキ" class="character-image">
+                    <img src="../public/assets/characters/ミズキ.jpg" alt="Mizuki" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">ミズキ</div>
+                        <div class="character-name">Mizuki</div>
                     </div>
                 </div>
                 <div class="character-card">
-                    <img src="public/assets/characters/フジ.JPG" alt="フジ" class="character-image">
+                    <img src="../public/assets/characters/フジ.JPG" alt="Fuji" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">フジ</div>
+                        <div class="character-name">Fuji</div>
                     </div>
                 </div>
                 <div class="character-card">
-                    <img src="public/assets/characters/リノ.jpg" alt="リノ" class="character-image">
+                    <img src="../public/assets/characters/リノ.jpg" alt="Lino" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">リノ</div>
+                        <div class="character-name">Lino</div>
                     </div>
                 </div>
                 <div class="character-card">
-                    <img src="public/assets/characters/サザンカ.JPG" alt="サザンカ" class="character-image">
+                    <img src="../public/assets/characters/サザンカ.JPG" alt="Sazanka" class="character-image">
                     <div class="character-info">
-                        <div class="character-name">サザンカ</div>
+                        <div class="character-name">Sazanka</div>
                     </div>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="public/assets/KUKU_Characters.zip" class="cta-primary" download style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <a href="../public/assets/KUKU_Characters.zip" class="cta-primary" download style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
                     <span style="font-size: 1.5rem;">📦</span>
-                    6人のキャラクター画像をダウンロード
+                    Download Character Images
                 </a>
-                <p style="margin-top: 1rem; color: #555; font-size: 0.9rem;">ZIP形式 | 完全無料 | クレジット表記必須</p>
+                <p style="margin-top: 1rem; color: #555; font-size: 0.9rem;">ZIP format | Completely Free | Credit Required</p>
             </div>
         </div>
     </section>
@@ -818,37 +818,37 @@
     <!-- World Section -->
     <section class="about">
         <div class="container">
-            <h2 class="section-title">KUKUの世界観</h2>
+            <h2 class="section-title">The World of KUKU</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.8;">
-                地上の「<strong>樹木の里</strong>」と地下の「<strong>翠根街（すいこんがい）</strong>」。<br>
-                二つの世界が織りなす、神秘的な物語。
+                The above-ground <strong>"Tree Village"</strong> and the underground <strong>"Suikon District"</strong>.<br>
+                A mystical story woven by two worlds.
             </p>
 
             <!-- World Videos -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 樹木の里</h3>
+                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 The Tree Village</h3>
                     <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
-                        <source src="public/assets/樹木の里IV.MP4" type="video/mp4">
-                        お使いのブラウザは動画タグをサポートしていません。
+                        <source src="../public/assets/樹木の里IV.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">KUKUたちが暮らす地上の集落。巨大な古木が立ち並び、自然と調和した美しい景観。</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">The above-ground settlement where the KUKUs live. Giant ancient trees stand tall in a beautiful landscape in harmony with nature.</p>
                 </div>
                 <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 翠根街</h3>
+                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 Suikon District</h3>
                     <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
-                        <source src="public/assets/翠根街IV.MP4" type="video/mp4">
-                        お使いのブラウザは動画タグをサポートしていません。
+                        <source src="../public/assets/翠根街IV.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">樹木の里の遥か地下に広がる神秘的な根の世界。森の記憶が蓄積され、古代の知恵と秘密が眠る聖域。</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">A mystical world of roots spreading far beneath the Tree Village. A sanctuary where forest memories accumulate and ancient wisdom and secrets sleep.</p>
                 </div>
             </div>
 
             <div class="about-grid">
                 <div class="about-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
                     <span class="emoji">♾️</span>
-                    <h3>循環と調和</h3>
-                    <p>地上と地下は見えない生命の糸で繋がり、互いに支え合うことで何千年もの間、繁栄し続けている。</p>
+                    <h3>Cycle and Harmony</h3>
+                    <p>The above-ground and underground are connected by invisible threads of life, supporting each other to prosper for thousands of years.</p>
                 </div>
             </div>
         </div>
@@ -857,34 +857,34 @@
     <!-- Steps Section -->
     <section class="steps">
         <div class="container">
-            <h2 class="section-title">はじめかた（最短3ステップ）</h2>
-            <p style="text-align: center; font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">誰でも簡単に、今すぐ創作を始められます</p>
+            <h2 class="section-title">Getting Started (3 Simple Steps)</h2>
+            <p style="text-align: center; font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">Anyone can easily start creating right now</p>
 
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <span class="emoji">📦</span>
-                    <h3>画像を受け取る</h3>
-                    <p>キャラクター画像を無料ダウンロード</p>
+                    <h3>Download Images</h3>
+                    <p>Get character images for free</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <span class="emoji">🎨</span>
-                    <h3>つくる</h3>
-                    <p>手／実写／AI、方法は自由。短くてOK</p>
+                    <h3>Create</h3>
+                    <p>Hand-drawn / Photography / AI - any method is free. Short works are OK</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <span class="emoji">🌍</span>
-                    <h3>投稿する</h3>
-                    <p>#KUKUART を付けてSNS投稿。公式特集・受賞候補の対象に</p>
+                    <h3>Share</h3>
+                    <p>Post on social media with #KUKUART. Eligible for official features and awards</p>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.15); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
                 <p style="font-size: 1rem; opacity: 0.95;">
                     <span style="font-size: 1.3rem; margin-right: 0.5rem;">💡</span>
-                    <strong>商用利用の場合:</strong> 年商$140,000まで無料。それ以上は事前申請が必要です。
+                    <strong>For commercial use:</strong> Free up to $140,000 annual revenue. Above that requires prior application.
                 </p>
             </div>
         </div>
@@ -893,30 +893,30 @@
     <!-- Contest Section -->
     <section class="contest">
         <div class="container">
-            <h2 class="section-title">最新情報</h2>
+            <h2 class="section-title">Latest News</h2>
 
             <div class="contest-card" onclick="openContestModal()">
                 <span style="background: rgba(255, 215, 0, 0.9); color: #0B3D2E; padding: 0.5rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem;">NEW</span>
-                <h3>第1回 ショートアニメ・コンテスト開催</h3>
-                <p>応募期間: 2025年11月1日〜2026年1月11日</p>
+                <h3>1st Short Animation Contest</h3>
+                <p>Submission Period: November 1, 2025 - January 11, 2026</p>
 
                 <div class="contest-prizes">
                     <div class="prize">
                         <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🥇</div>
-                        <div>最優秀賞 $400</div>
+                        <div>Grand Prize $400</div>
                     </div>
                     <div class="prize">
                         <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🥈</div>
-                        <div>優秀賞 $100</div>
+                        <div>Excellence Award $100</div>
                     </div>
                     <div class="prize">
                         <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤖</div>
-                        <div>AI活用歓迎</div>
+                        <div>AI Welcome</div>
                     </div>
                 </div>
 
                 <div style="margin-top: 2rem; padding: 1rem 2rem; background: white; color: #0B3D2E; border-radius: 50px; font-weight: 600; font-size: 1rem; display: inline-block;">
-                    クリックして詳細を見る →
+                    Click to view details →
                 </div>
             </div>
         </div>
@@ -927,75 +927,75 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeContestModal()">&times;</button>
 
-            <h2>🎬 第1回 KUKU ショートアニメ・コンテスト</h2>
+            <h2>🎬 1st KUKU Short Animation Contest</h2>
 
             <div class="modal-section">
-                <p style="font-size: 1.2rem; font-weight: 600; color: #0B3D2E;">世界中のクリエイターよ、60秒で魅せろ。</p>
-                <p>AI、手描き、CG、どんな手法でもOK。KUKUの世界で、あなただけの物語を創ろう。</p>
+                <p style="font-size: 1.2rem; font-weight: 600; color: #0B3D2E;">Creators from around the world, captivate us in 60 seconds.</p>
+                <p>AI, hand-drawn, CG - any method is OK. Create your own story in the KUKU world.</p>
             </div>
 
-            <h3>🏆 賞金総額 $500</h3>
+            <h3>🏆 Total Prize Money $500</h3>
             <div class="modal-section">
-                <h4>最優秀賞（1名）</h4>
+                <h4>Grand Prize (1 winner)</h4>
                 <ul>
-                    <li>賞金 $400</li>
-                    <li>公式SNSでの大々的な紹介</li>
+                    <li>Prize money $400</li>
+                    <li>Major feature on official social media</li>
                 </ul>
 
-                <h4>優秀賞（1名）</h4>
+                <h4>Excellence Award (1 winner)</h4>
                 <ul>
-                    <li>賞金 $100</li>
-                    <li>公式SNSでの紹介</li>
-                </ul>
-            </div>
-
-            <h3>📅 開催スケジュール</h3>
-            <div class="modal-section">
-                <p><strong>応募期間：</strong> 2025年11月1日（金）〜 2026年1月11日（土）23:59</p>
-                <p><strong>結果発表：</strong> 2026年1月下旬（公式サイト・SNSにて）</p>
-            </div>
-
-            <h3>📋 応募要項</h3>
-            <div class="modal-section">
-                <h4>テーマ</h4>
-                <p><strong>「つながり」</strong><br>
-                KUKUの世界観の核心である「世界中のクリエイターが繋がり、共に創る」をテーマにした作品を募集します。解釈は自由です。</p>
-
-                <h4>応募条件</h4>
-                <ul>
-                    <li>動画の長さは<strong>60秒以内</strong>（タイトル・クレジット含む）</li>
-                    <li>KUKUのキャラクターまたは世界観を使用していること</li>
-                    <li>オリジナル作品であること（二次創作OK、他作品の盗用は不可）</li>
-                    <li>言語は自由</li>
-                </ul>
-
-                <h4>制作手法</h4>
-                <p><strong>すべての手法を歓迎します！</strong></p>
-                <ul>
-                    <li>手描きアニメーション</li>
-                    <li>AI活用</li>
-                    <li>3DCG（Blender、Unreal Engineなど）</li>
-                    <li>Live2D / ストップモーション / 実写（コスプレなど）</li>
-                    <li>上記の組み合わせ</li>
-                </ul>
-
-                <h4>参加資格</h4>
-                <ul>
-                    <li>年齢、国籍、プロ・アマ問わず</li>
-                    <li>個人・チームどちらでも応募可能</li>
-                    <li>一人（一チーム）何作品でも応募可能</li>
+                    <li>Prize money $100</li>
+                    <li>Feature on official social media</li>
                 </ul>
             </div>
 
-            <h3>📤 応募方法</h3>
+            <h3>📅 Event Schedule</h3>
             <div class="modal-section">
-                <p><strong>STEP 1:</strong> 60秒以内のアニメーションを制作</p>
-                <p><strong>STEP 2:</strong> 各種SNSに #KUKU #KUKUART2025 を記載</p>
+                <p><strong>Submission Period:</strong> November 1, 2025 (Fri) - January 11, 2026 (Sat) 23:59</p>
+                <p><strong>Results Announcement:</strong> Late January 2026 (via official website & social media)</p>
+            </div>
+
+            <h3>📋 Application Requirements</h3>
+            <div class="modal-section">
+                <h4>Theme</h4>
+                <p><strong>"Connection"</strong><br>
+                We are looking for works based on the core theme of the KUKU worldview: "Creators from around the world connect and create together." Interpretation is free.</p>
+
+                <h4>Submission Requirements</h4>
+                <ul>
+                    <li>Video length must be <strong>60 seconds or less</strong> (including titles and credits)</li>
+                    <li>Must use KUKU characters or worldview</li>
+                    <li>Must be an original work (fan works OK, plagiarism from other works not allowed)</li>
+                    <li>Any language is acceptable</li>
+                </ul>
+
+                <h4>Production Methods</h4>
+                <p><strong>All methods are welcome!</strong></p>
+                <ul>
+                    <li>Hand-drawn animation</li>
+                    <li>AI utilization</li>
+                    <li>3DCG (Blender, Unreal Engine, etc.)</li>
+                    <li>Live2D / Stop motion / Live action (cosplay, etc.)</li>
+                    <li>Combinations of the above</li>
+                </ul>
+
+                <h4>Eligibility</h4>
+                <ul>
+                    <li>No restrictions on age, nationality, professional or amateur status</li>
+                    <li>Individual or team submissions accepted</li>
+                    <li>Multiple submissions per person (or team) allowed</li>
+                </ul>
+            </div>
+
+            <h3>📤 How to Submit</h3>
+            <div class="modal-section">
+                <p><strong>STEP 1:</strong> Create an animation of 60 seconds or less</p>
+                <p><strong>STEP 2:</strong> Post on various social media with #KUKU #KUKUART2025</p>
             </div>
 
             <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #0B3D2E 0%, #7fb069 100%); color: white; border-radius: 12px;">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">さあ、創造を始めよう</p>
-                <p style="opacity: 0.9;">KUKUの世界で、あなただけの物語を60秒で魅せてください。</p>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Now, let the creation begin</p>
+                <p style="opacity: 0.9;">Show your own story in 60 seconds in the KUKU world.</p>
             </div>
         </div>
     </div>
@@ -1003,15 +1003,15 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="section-title">今すぐ始めよう</h2>
+            <h2 class="section-title">Start Now</h2>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; line-height: 1.8;">
-                あなたの創造が、KUKUの物語を育てる。<br>
-                世界の80億人が参加できる新しいキャラクターIP。
+                Your creativity grows KUKU's story.<br>
+                A new character IP that 8 billion people can participate in.
             </p>
 
             <div class="cta-buttons">
-                <a href="public/assets/KUKU_Characters.zip" class="cta-primary" download>キャラクター画像をダウンロード</a>
-                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-secondary" target="_blank">コミュニティに参加</a>
+                <a href="../public/assets/KUKU_Characters.zip" class="cta-primary" download>Download Character Images</a>
+                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-secondary" target="_blank">Join Community</a>
             </div>
         </div>
     </section>
@@ -1020,35 +1020,35 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo">KUKU</div>
-            <p style="opacity: 0.9; margin-bottom: 1.5rem;">世界80億人と創るオープンIP</p>
+            <p style="opacity: 0.9; margin-bottom: 1.5rem;">An Open IP Co-Created by 8 Billion People</p>
 
             <div class="footer-links">
                 <a href="https://instagram.com/kukutree99" target="_blank">Instagram</a>
                 <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" target="_blank">WhatsApp</a>
-                <a href="https://kukuofficial.theshop.jp/" target="_blank">ショップ</a>
+                <a href="https://kukuofficial.theshop.jp/" target="_blank">Shop</a>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2025 FOMUS. All rights reserved.</p>
-                <p style="margin-top: 1rem;">あなたの想像が、この世界を動かす。</p>
+                <p style="margin-top: 1rem;">Your imagination moves this world.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // モーダルを開く
+        // Open modal
         function openContestModal() {
             document.getElementById('contestModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        // モーダルを閉じる
+        // Close modal
         function closeContestModal() {
             document.getElementById('contestModal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // モーダルの外側をクリックしたら閉じる
+        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('contestModal');
             if (event.target === modal) {
@@ -1056,20 +1056,20 @@
             }
         }
 
-        // ESCキーでモーダルを閉じる
+        // Close modal with ESC key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeContestModal();
             }
         });
 
-        // 言語メニューを切り替え
+        // Toggle language menu
         function toggleLanguageMenu() {
             const menu = document.getElementById('languageMenu');
             menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
         }
 
-        // メニュー外をクリックしたら閉じる
+        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const languageSelector = document.querySelector('.language-selector');
             if (languageSelector && !languageSelector.contains(event.target)) {
