@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>KUKU - 世界80億人と創るオープンIP</title>
+    <meta name="title" content="KUKU - 世界80億人と創るオープンIP">
+    <meta name="description" content="誰でも自由に使えるキャラクター。二次創作OK・商用利用OK・収益化OK。手描きでもAIでも歓迎。">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: #0B3D2E;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8faf9 0%, #ffffff 50%, #faf9f6 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #0B3D2E;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: #7fb069;
+            font-weight: 700;
+        }
+
+        .hero-video {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(11, 61, 46, 0.15);
+            margin: 0 auto 2rem;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-badge {
+            background: rgba(127, 176, 105, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #0B3D2E;
+            border: 2px solid #7fb069;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #0B3D2E;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, rgba(127, 176, 105, 0.05) 0%, rgba(127, 176, 105, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid rgba(127, 176, 105, 0.2);
+            text-align: center;
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            color: #0B3D2E;
+            margin: 1rem 0;
+        }
+
+        .about-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Characters Section */
+        .characters {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8faf9 0%, #e8ebe7 100%);
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .character-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .character-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0B3D2E;
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #0B3D2E 0%, #1a5a47 100%);
+            color: white;
+        }
+
+        .steps .section-title {
+            color: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, #0B3D2E 0%, #7fb069 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .step-card h3 {
+            color: #0B3D2E;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Contest Section */
+        .contest {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .contest-card {
+            background: linear-gradient(135deg, #0B3D2E 0%, #7fb069 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            color: white;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contest-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contest-card p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .contest-prizes {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .prize {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+        }
+
+        .contest-card {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 3% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            color: #0B3D2E;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .modal h3 {
+            color: #0B3D2E;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .modal h4 {
+            color: #7fb069;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .modal p, .modal li {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .modal ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #0B3D2E 0%, #1a5c47 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(11, 61, 46, 0.3);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: #0B3D2E;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid #0B3D2E;
+        }
+
+        .cta-secondary:hover {
+            background: #0B3D2E;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0B3D2E;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: #98D8A3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .characters-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about, .characters, .steps, .contest, .cta-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .characters-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 2rem 1.5rem;
+                max-width: 95%;
+            }
+
+            .modal-close {
+                right: 1rem;
+                top: 1rem;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <img src="public/assets/KUKU_logo.png" alt="KUKU" class="logo">
+            <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">コミュニティに参加</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>世界の80億人で育てる<br>新しいキャラクタープロジェクト<span class="highlight">「KUKU」</span></h1>
+            <p>誰でも自由に使えるキャラクター。二次創作OK・商用利用OK・収益化OK。<br>手描きでも、AIでも、どんな方法でも歓迎します。</p>
+
+            <iframe class="hero-video" src="https://www.youtube.com/embed/tQoT6o2RO6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="aspect-ratio: 16/9; height: auto;"></iframe>
+
+            <div class="hero-features">
+                <div class="feature-badge">✓ 二次創作OK</div>
+                <div class="feature-badge">✓ 商用利用OK</div>
+                <div class="feature-badge">✓ AI活用歓迎</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">KUKUとは？</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.8;">
+                <strong>KUKU（クク）</strong>は、世界中の誰でも自由に使える<strong>キャラクターと物語の世界</strong>です。<br>
+                舞台は、木々と光が共に生きる場所——<strong>「樹木の里（The Tree Village）」</strong>。<br>
+                手描きでも、AIでも、どんな方法でも、この世界に参加できます。
+            </p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="emoji">🌿</span>
+                    <h3>オープン提供</h3>
+                    <p>キャラクターと世界観を誰でも自由に利用・創作できます</p>
+                </div>
+                <div class="about-card">
+                    <span class="emoji">🎨</span>
+                    <h3>すべての表現を歓迎</h3>
+                    <p>AI・手描き・写真・音楽・映像など、スタイルは問いません</p>
+                </div>
+                <div class="about-card">
+                    <span class="emoji">💰</span>
+                    <h3>収益化OK</h3>
+                    <p>ガイドラインの範囲内で、あなたの作品として収益化できます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="characters">
+        <div class="container">
+            <h2 class="section-title">6人のキャラクター</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">それぞれ個性豊かなキャラクターたち。自由に使って、あなたの物語を創造しよう</p>
+
+            <div class="characters-grid">
+                <div class="character-card">
+                    <img src="public/assets/characters/ヒノキ.JPG" alt="ヒノキ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">ヒノキ</div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <img src="public/assets/characters/サクラ.JPG" alt="サクラ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">サクラ</div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <img src="public/assets/characters/ミズキ.jpg" alt="ミズキ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">ミズキ</div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <img src="public/assets/characters/フジ.JPG" alt="フジ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">フジ</div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <img src="public/assets/characters/リノ.jpg" alt="リノ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">リノ</div>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <img src="public/assets/characters/サザンカ.JPG" alt="サザンカ" class="character-image">
+                    <div class="character-info">
+                        <div class="character-name">サザンカ</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="public/assets/KUKU_Characters.zip" class="cta-primary" download style="display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                    <span style="font-size: 1.5rem;">📦</span>
+                    6人のキャラクター画像をダウンロード
+                </a>
+                <p style="margin-top: 1rem; color: #555; font-size: 0.9rem;">ZIP形式 | 完全無料 | クレジット表記必須</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">KUKUの世界観</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.8;">
+                地上の「<strong>樹木の里</strong>」と地下の「<strong>翠根街（すいこんがい）</strong>」。<br>
+                二つの世界が織りなす、神秘的な物語。
+            </p>
+
+            <!-- World Videos -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 樹木の里</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                        <source src="public/assets/樹木の里IV.MP4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
+                    </video>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">KUKUたちが暮らす地上の集落。巨大な古木が立ち並び、自然と調和した美しい景観。</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 翠根街</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                        <source src="public/assets/翠根街IV.MP4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
+                    </video>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">樹木の里の遥か地下に広がる神秘的な根の世界。森の記憶が蓄積され、古代の知恵と秘密が眠る聖域。</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+                    <span class="emoji">♾️</span>
+                    <h3>循環と調和</h3>
+                    <p>地上と地下は見えない生命の糸で繋がり、互いに支え合うことで何千年もの間、繁栄し続けている。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="section-title">はじめかた（最短3ステップ）</h2>
+            <p style="text-align: center; font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">誰でも簡単に、今すぐ創作を始められます</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <span class="emoji">📦</span>
+                    <h3>画像を受け取る</h3>
+                    <p>キャラクター画像を無料ダウンロード</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <span class="emoji">🎨</span>
+                    <h3>つくる</h3>
+                    <p>手／実写／AI、方法は自由。短くてOK</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <span class="emoji">🌍</span>
+                    <h3>投稿する</h3>
+                    <p>#KUKUART を付けてSNS投稿。公式特集・受賞候補の対象に</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.15); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+                <p style="font-size: 1rem; opacity: 0.95;">
+                    <span style="font-size: 1.3rem; margin-right: 0.5rem;">💡</span>
+                    <strong>商用利用の場合:</strong> 年商$140,000まで無料。それ以上は事前申請が必要です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contest Section -->
+    <section class="contest">
+        <div class="container">
+            <h2 class="section-title">最新情報</h2>
+
+            <div class="contest-card" onclick="openContestModal()">
+                <span style="background: rgba(255, 215, 0, 0.9); color: #0B3D2E; padding: 0.5rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem;">NEW</span>
+                <h3>第1回 ショートアニメ・コンテスト開催</h3>
+                <p>応募期間: 2025年11月1日〜2026年1月11日</p>
+
+                <div class="contest-prizes">
+                    <div class="prize">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🥇</div>
+                        <div>最優秀賞 $400</div>
+                    </div>
+                    <div class="prize">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🥈</div>
+                        <div>優秀賞 $100</div>
+                    </div>
+                    <div class="prize">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤖</div>
+                        <div>AI活用歓迎</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem 2rem; background: white; color: #0B3D2E; border-radius: 50px; font-weight: 600; font-size: 1rem; display: inline-block;">
+                    クリックして詳細を見る →
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contest Modal -->
+    <div id="contestModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContestModal()">&times;</button>
+
+            <h2>🎬 第1回 KUKU ショートアニメ・コンテスト</h2>
+
+            <div class="modal-section">
+                <p style="font-size: 1.2rem; font-weight: 600; color: #0B3D2E;">世界中のクリエイターよ、60秒で魅せろ。</p>
+                <p>AI、手描き、CG、どんな手法でもOK。KUKUの世界で、あなただけの物語を創ろう。</p>
+            </div>
+
+            <h3>🏆 賞金総額 $500</h3>
+            <div class="modal-section">
+                <h4>最優秀賞（1名）</h4>
+                <ul>
+                    <li>賞金 $400</li>
+                    <li>公式SNSでの大々的な紹介</li>
+                </ul>
+
+                <h4>優秀賞（1名）</h4>
+                <ul>
+                    <li>賞金 $100</li>
+                    <li>公式SNSでの紹介</li>
+                </ul>
+            </div>
+
+            <h3>📅 開催スケジュール</h3>
+            <div class="modal-section">
+                <p><strong>応募期間：</strong> 2025年11月1日（金）〜 2026年1月11日（土）23:59</p>
+                <p><strong>結果発表：</strong> 2026年1月下旬（公式サイト・SNSにて）</p>
+            </div>
+
+            <h3>📋 応募要項</h3>
+            <div class="modal-section">
+                <h4>テーマ</h4>
+                <p><strong>「つながり」</strong><br>
+                KUKUの世界観の核心である「世界中のクリエイターが繋がり、共に創る」をテーマにした作品を募集します。解釈は自由です。</p>
+
+                <h4>応募条件</h4>
+                <ul>
+                    <li>動画の長さは<strong>60秒以内</strong>（タイトル・クレジット含む）</li>
+                    <li>KUKUのキャラクターまたは世界観を使用していること</li>
+                    <li>オリジナル作品であること（二次創作OK、他作品の盗用は不可）</li>
+                    <li>言語は自由</li>
+                </ul>
+
+                <h4>制作手法</h4>
+                <p><strong>すべての手法を歓迎します！</strong></p>
+                <ul>
+                    <li>手描きアニメーション</li>
+                    <li>AI活用</li>
+                    <li>3DCG（Blender、Unreal Engineなど）</li>
+                    <li>Live2D / ストップモーション / 実写（コスプレなど）</li>
+                    <li>上記の組み合わせ</li>
+                </ul>
+
+                <h4>参加資格</h4>
+                <ul>
+                    <li>年齢、国籍、プロ・アマ問わず</li>
+                    <li>個人・チームどちらでも応募可能</li>
+                    <li>一人（一チーム）何作品でも応募可能</li>
+                </ul>
+            </div>
+
+            <h3>📤 応募方法</h3>
+            <div class="modal-section">
+                <p><strong>STEP 1:</strong> 60秒以内のアニメーションを制作</p>
+                <p><strong>STEP 2:</strong> 各種SNSに #KUKU #KUKUART2025 を記載</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #0B3D2E 0%, #7fb069 100%); color: white; border-radius: 12px;">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">さあ、創造を始めよう</p>
+                <p style="opacity: 0.9;">KUKUの世界で、あなただけの物語を60秒で魅せてください。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">今すぐ始めよう</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; line-height: 1.8;">
+                あなたの創造が、KUKUの物語を育てる。<br>
+                世界の80億人が参加できる新しいキャラクターIP。
+            </p>
+
+            <div class="cta-buttons">
+                <a href="public/assets/KUKU_Characters.zip" class="cta-primary" download>キャラクター画像をダウンロード</a>
+                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-secondary" target="_blank">コミュニティに参加</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">KUKU</div>
+            <p style="opacity: 0.9; margin-bottom: 1.5rem;">世界80億人と創るオープンIP</p>
+
+            <div class="footer-links">
+                <a href="https://instagram.com/kukutree99" target="_blank">Instagram</a>
+                <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" target="_blank">WhatsApp</a>
+                <a href="https://kukuofficial.theshop.jp/" target="_blank">ショップ</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FOMUS. All rights reserved.</p>
+                <p style="margin-top: 1rem;">あなたの想像が、この世界を動かす。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モーダルを開く
+        function openContestModal() {
+            document.getElementById('contestModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // モーダルを閉じる
+        function closeContestModal() {
+            document.getElementById('contestModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // モーダルの外側をクリックしたら閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('contestModal');
+            if (event.target === modal) {
+                closeContestModal();
+            }
+        }
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeContestModal();
+            }
+        });
+    </script>
+</body>
+</html>
