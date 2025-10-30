@@ -46,3 +46,51 @@ KUKU-LP/
 ---
 
 作成日: 2025年1月
+
+## SEO対策
+
+このサイトは世界中で検索されるよう、以下のSEO対策を実装しています：
+
+### 1. メタタグ最適化
+- **Open Graph (OG)タグ**: Facebook、LinkedIn等での共有時の表示最適化
+- **Twitter Cardタグ**: Twitter/X での共有時の表示最適化
+- **キーワードメタタグ**: 関連する検索キーワードを設定
+- **Canonical URL**: 重複コンテンツを防ぐ正規URLの指定
+
+### 2. 多言語対応（hreflang）
+- 日本語（ja）、英語（en）、フランス語（fr）の3言語対応
+- 各言語版のURLを相互に参照
+- デフォルト言語（x-default）を設定
+
+### 3. 構造化データ（JSON-LD）
+- Organization（組織情報）
+- WebSite（ウェブサイト情報）
+- Schema.orgに準拠した構造化データを実装
+
+### 4. サイトマップ（sitemap.xml）
+- 全ページのURL一覧を提供
+- 検索エンジンのクローリング効率化
+- 多言語ページの関連性を明示
+
+### 5. robots.txt
+- 検索エンジンクローラーへの指示
+- サイトマップの場所を明示
+- クロール対象の制御
+
+## 検索エンジン登録
+
+サイト公開後、以下の検索エンジンに登録してください：
+
+1. **Google Search Console**
+   - https://search.google.com/search-console
+   - サイトマップを送信: `https://kuku.fomusglobal.com/sitemap.xml`
+
+2. **Bing Webmaster Tools**
+   - https://www.bing.com/webmasters
+   - サイトマップを送信
+
+3. **その他の推奨事項**
+   - ページの読み込み速度を最適化
+   - モバイルフレンドリーテストを実施
+   - 定期的にコンテンツを更新
+   - 外部サイトからのリンク（バックリンク）を獲得

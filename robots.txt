@@ -1,0 +1,18 @@
+# robots.txt for KUKU
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://kuku.fomusglobal.com/sitemap.xml
+
+# Disallow admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of assets
+Allow: /public/
+Allow: /en/
+Allow: /fr/
+
+# Crawl-delay (optional, adjust if needed)
+Crawl-delay: 1

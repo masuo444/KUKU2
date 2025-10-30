@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Japanese (Default) -->
+    <url>
+        <loc>https://kuku.fomusglobal.com/</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://kuku.fomusglobal.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://kuku.fomusglobal.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://kuku.fomusglobal.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://kuku.fomusglobal.com/" />
+    </url>
+
+    <!-- English -->
+    <url>
+        <loc>https://kuku.fomusglobal.com/en/</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://kuku.fomusglobal.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://kuku.fomusglobal.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://kuku.fomusglobal.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://kuku.fomusglobal.com/" />
+    </url>
+
+    <!-- French -->
+    <url>
+        <loc>https://kuku.fomusglobal.com/fr/</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://kuku.fomusglobal.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://kuku.fomusglobal.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://kuku.fomusglobal.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://kuku.fomusglobal.com/" />
+    </url>
+
+</urlset>
