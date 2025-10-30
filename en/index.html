@@ -592,12 +592,6 @@
                 font-size: 1.1rem;
             }
 
-            /* World Videos - Single column on mobile */
-            div[style*="grid-template-columns: repeat(auto-fit"] {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
             /* Steps Grid - Single column on mobile */
             .steps-grid {
                 grid-template-columns: 1fr;
@@ -833,22 +827,22 @@
             </p>
 
             <!-- World Videos -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 The Tree Village</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+            <div style="max-width: 700px; margin: 0 auto 3rem;">
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌳 The Tree Village</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="../public/assets/樹木の里IV.MP4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">The above-ground settlement where the KUKUs live. Giant ancient trees stand tall in a beautiful landscape in harmony with nature.</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">The above-ground settlement where the KUKUs live. Giant ancient trees stand tall in a beautiful landscape in harmony with nature.</p>
                 </div>
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 Suikon District</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <div>
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌌 Suikon District</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="../public/assets/翠根街IV.MP4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">A mystical world of roots spreading far beneath the Tree Village. A sanctuary where forest memories accumulate and ancient wisdom and secrets sleep.</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">A mystical world of roots spreading far beneath the Tree Village. A sanctuary where forest memories accumulate and ancient wisdom and secrets sleep.</p>
                 </div>
             </div>
 

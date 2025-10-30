@@ -592,12 +592,6 @@
                 font-size: 1.1rem;
             }
 
-            /* World Videos - スマホは1列表示 */
-            div[style*="grid-template-columns: repeat(auto-fit"] {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
             /* Steps Grid - スマホは1列表示 */
             .steps-grid {
                 grid-template-columns: 1fr;
@@ -833,22 +827,22 @@
             </p>
 
             <!-- World Videos -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 Le Village des Arbres</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+            <div style="max-width: 700px; margin: 0 auto 3rem;">
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌳 Le Village des Arbres</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="../public/assets/樹木の里IV.MP4" type="video/mp4">
                         Votre navigateur ne supporte pas la balise vidéo.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">Le village en surface où vivent les KUKU. D'anciens arbres géants se dressent, créant un paysage magnifique en harmonie avec la nature.</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">Le village en surface où vivent les KUKU. D'anciens arbres géants se dressent, créant un paysage magnifique en harmonie avec la nature.</p>
                 </div>
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 Quartier Suikon</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <div>
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌌 Quartier Suikon</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="../public/assets/翠根街IV.MP4" type="video/mp4">
                         Votre navigateur ne supporte pas la balise vidéo.
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">Un monde mystique de racines qui s'étend profondément sous le Village des Arbres. Un sanctuaire où les souvenirs de la forêt s'accumulent et où dorment la sagesse et les secrets anciens.</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">Un monde mystique de racines qui s'étend profondément sous le Village des Arbres. Un sanctuaire où les souvenirs de la forêt s'accumulent et où dorment la sagesse et les secrets anciens.</p>
                 </div>
             </div>
 

@@ -592,12 +592,6 @@
                 font-size: 1.1rem;
             }
 
-            /* World Videos - スマホは1列表示 */
-            div[style*="grid-template-columns: repeat(auto-fit"] {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
             /* Steps Grid - スマホは1列表示 */
             .steps-grid {
                 grid-template-columns: 1fr;
@@ -833,22 +827,22 @@
             </p>
 
             <!-- World Videos -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌳 樹木の里</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+            <div style="max-width: 700px; margin: 0 auto 3rem;">
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌳 樹木の里</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="public/assets/樹木の里IV.MP4" type="video/mp4">
                         お使いのブラウザは動画タグをサポートしていません。
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">KUKUたちが暮らす地上の集落。巨大な古木が立ち並び、自然と調和した美しい景観。</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">KUKUたちが暮らす地上の集落。巨大な古木が立ち並び、自然と調和した美しい景観。</p>
                 </div>
-                <div style="text-align: center;">
-                    <h3 style="font-size: 1.3rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700;">🌌 翠根街</h3>
-                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <div>
+                    <h3 style="font-size: 1.5rem; color: #0B3D2E; margin-bottom: 1rem; font-weight: 700; text-align: center;">🌌 翠根街</h3>
+                    <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); background: #000;">
                         <source src="public/assets/翠根街IV.MP4" type="video/mp4">
                         お使いのブラウザは動画タグをサポートしていません。
                     </video>
-                    <p style="margin-top: 1rem; color: #555; line-height: 1.6;">樹木の里の遥か地下に広がる神秘的な根の世界。森の記憶が蓄積され、古代の知恵と秘密が眠る聖域。</p>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.7; font-size: 1rem;">樹木の里の遥か地下に広がる神秘的な根の世界。森の記憶が蓄積され、古代の知恵と秘密が眠る聖域。</p>
                 </div>
             </div>
 
