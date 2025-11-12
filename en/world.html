@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUKU World Overview</title>
+    <meta name="description" content="Discover Tree Village, The Undergrove, and the spirit-bound artifacts that define the KUKU world." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../public/favicon.ico" />
+    <style>
+      :root {
+        --primary: #0b3d2e;
+        --sand: #f6f1ea;
+        --ink: #0f172a;
+        --line: rgba(15, 23, 42, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--sand);
+        color: var(--ink);
+        line-height: 1.8;
+      }
+      .world-hero {
+        min-height: 60vh;
+        background: linear-gradient(135deg, rgba(11, 61, 46, 0.9), rgba(5, 10, 8, 0.9)),
+          url('../public/assets/kuku_village_thumb.jpg') center/cover;
+        color: white;
+        text-align: center;
+        padding: 6rem 1.5rem 5rem;
+      }
+      .world-hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        margin-bottom: 1rem;
+      }
+      .world-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      .container {
+        width: min(1200px, 90%);
+        margin: 0 auto;
+        padding: 4rem 0;
+      }
+      .header {
+        background: #0B3D2E;
+        padding: 0.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        height: 42px;
+      }
+      .cta-button {
+        background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+      }
+      .story-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 1px solid var(--line);
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.08);
+        margin-bottom: 2.5rem;
+      }
+      .story-section h2,
+      .story-section h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .world-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .world-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2rem;
+        border: 1px solid var(--line);
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+      .world-section h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .guideline-actions a {
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.9rem 2.2rem;
+        border-radius: 999px;
+      }
+      .guideline-actions .primary {
+        background: var(--primary);
+        color: white;
+      }
+      .guideline-actions .secondary {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+      }
+      .back-link {
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .back-link a {
+        display: inline-flex;
+        padding: 0.85rem 2.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      video {
+        width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <img src="../public/assets/KUKU_logo.png" alt="KUKU" class="logo" />
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="language-selector" style="position: relative;">
+            <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              🌐 English
+            </button>
+            <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
+              <a href="../world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
+              <a href="world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+              <a href="../fr/world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">Join the Community</a>
+        </div>
+      </div>
+    </header>
+    <section class="world-hero">
+      <h1>KUKU World Overview</h1>
+      <p>Tree Village (the surface) and The Undergrove (the root city) reveal how the KUKU woodfolk live with light, memory, and spirits.</p>
+    </section>
+
+    <section class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p style="font-size: 0.9rem; letter-spacing: 0.2em; color: rgba(11, 61, 46, 0.6); margin-bottom: 0.5rem;">🌳 KUKU WORLD</p>
+        <h2 style="font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0; color: var(--primary);">What is KUKU?</h2>
+      </div>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>KUKU Woodfolk</h3>
+          <p>KUKU are woodfolk born between the tree deity Kukunochi and humankind. Part of their bodies is wooden, allowing them to heal and sustain life simply by bathing in light.</p>
+          <p>They are destined to live with the forest—strong like trees, gentle like people. Many carry a wooden box called a <em>masu</em>, where contracted spirits dwell. Channeling those spirits through battle, healing, music, or dance is known as Spirit Art, the signature power of KUKU.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_village_thumb.jpg">
+          <source src="../kukuvideMP4.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Masu (Spirit Vessel)</h3>
+          <p>The <em>masu</em> is a symbolic heirloom said to be given by Kukunochi to every KUKU child. Each box shelters a spirit. When the KUKU sings, fights, prays, or performs, the masu glows, becoming a shield, a lantern, or even an instrument.</p>
+          <p>Because the masu grows with its owner, the wood grain shifts alongside their heart. Fully awakened spirits make the box shimmer like a living being.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_characters.png">
+          <source src="../masu%20mov.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Spirits</h3>
+          <p>In the KUKU world, every natural phenomenon hosts a spirit—light, wind, water, fire, soil, flowers, even shadows. The relationship is resonance, not domination.</p>
+          <p>When a heart is clouded, spirits fall silent; when it is clear, they sing together. Spirits rest inside the masu and grow with their partners. Over long years, the box breathes like a living creature, and when spirit and KUKU synchronize, unknown powers emerge.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/翠根街.JPG">
+          <source src="../精霊.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Tree Village</h3>
+          <p>Tree Village is the surface settlement where KUKU have lived for millennia amid mist and sunlight. At its center rises the world tree born from Kukunochi. Its trunk is wider than mountains, its branches pierce the clouds, and at night the bark’s lines glow softly to illuminate the entire forest.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_village_thumb.jpg">
+          <source src="../樹木の里IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>The Undergrove</h3>
+          <p>The Undergrove is a subterranean city carved inside the world tree’s colossal roots. Tangled roots form a vaulted ceiling where glowing moss and light-bugs spill emerald light over the streets.</p>
+          <p>Vendors trade resin lamps, fragrant fruit crafts, and vessels that house spirits. The rhythm of mallets and merchants never stops. While Tree Village is serene and prayerful, the Undergrove is a second world below—alive with light, sound, and scent—the creative heart of the forest civilization.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/翠根街.JPG">
+          <source src="../翠根街IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="world-section" style="margin-top: 3rem;">
+        <h2>Write Your Story in This World</h2>
+        <p>Use Tree Village, The Undergrove, and the official character sheets as your launch pad. Remix them with your perspective and let the spirits guide your narrative.</p>
+        <div class="guideline-actions" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+          <a class="primary" href="../public/assets/KUKU_Starter_Pack.zip">Download Starter Pack</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/en/characters" target="_blank" rel="noreferrer">View Characters</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/en/guidelines" target="_blank" rel="noreferrer">Read Guidelines</a>
+        </div>
+      </article>
+
+      <div class="back-link">
+        <a href="contest-lp.html">Back to Contest LP</a>
+      </div>
+    </section>
+    <script>
+      function toggleLanguageMenu() {
+        const menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+      document.addEventListener('click', (event) => {
+        const menu = document.getElementById('languageMenu');
+        if (!menu) return;
+        const button = menu.previousElementSibling;
+        if (menu && !menu.contains(event.target) && !button.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUKU World Overview</title>
+    <meta name="description" content="樹木の里と翠根街、KUKUたちが暮らす世界の概要と制作ヒントを紹介します。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0b3d2e;
+        --sand: #f6f1ea;
+        --ink: #0f172a;
+        --line: rgba(15, 23, 42, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--sand);
+        color: var(--ink);
+        line-height: 1.8;
+      }
+      .world-hero {
+        min-height: 60vh;
+        background: linear-gradient(135deg, rgba(11, 61, 46, 0.9), rgba(5, 10, 8, 0.9)),
+          url('public/assets/kuku_village_thumb.jpg') center/cover;
+        color: white;
+        text-align: center;
+        padding: 6rem 1.5rem 5rem;
+      }
+      .world-hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        margin-bottom: 1rem;
+      }
+      .world-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      .container {
+        width: min(1200px, 90%);
+        margin: 0 auto;
+        padding: 4rem 0;
+      }
+      .header {
+        background: #0B3D2E;
+        padding: 0.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        height: 42px;
+      }
+      .cta-button {
+        background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+      }
+      .story-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 1px solid var(--line);
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.08);
+        margin-bottom: 2.5rem;
+      }
+      .story-section h2 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .story-card {
+        background: rgba(11, 61, 46, 0.04);
+        border-radius: 20px;
+        padding: 1.5rem;
+      }
+      .story-card h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .world-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .world-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2rem;
+        border: 1px solid var(--line);
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+      .world-section h2 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .world-section ul {
+        margin: 1rem 0 0;
+        padding-left: 1.1rem;
+      }
+      .guideline-actions a {
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.9rem 2.2rem;
+        border-radius: 999px;
+      }
+      .guideline-actions .primary {
+        background: var(--primary);
+        color: white;
+      }
+      .guideline-actions .secondary {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+      }
+      .back-link {
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .back-link a {
+        display: inline-flex;
+        padding: 0.85rem 2.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <img src="public/assets/KUKU_logo.png" alt="KUKU" class="logo" />
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="language-selector" style="position: relative;">
+            <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              🌐 日本語
+            </button>
+            <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
+              <a href="world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
+              <a href="en/world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+              <a href="fr/world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">コミュニティに参加</a>
+        </div>
+      </div>
+    </header>
+    <section class="world-hero">
+      <h1>KUKU World Overview</h1>
+      <p>樹木の里（Tree Village）と翠根街（The Undergrove）、そしてそこに生きるKUKUたちの暮らしを俯瞰できるリファレンスページです。</p>
+    </section>
+
+    <section class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p style="font-size: 0.9rem; letter-spacing: 0.2em; color: rgba(11, 61, 46, 0.6); margin-bottom: 0.5rem;">🌳 KUKU WORLD</p>
+        <h2 style="font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0; color: var(--primary);">KUKUとは何か</h2>
+      </div>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>KUKUとは</h3>
+          <p>
+            KUKU（クク）は、木の神「ククノチ」とニンゲンの間に生まれた新しい種族――木人間（Woodfolk）です。身体の一部が木でできており、光を浴びることで生命を維持し、傷を癒すことができます。
+          </p>
+          <p>
+            木のように強く、人のように優しく、森と共に生きることを宿命づけられた存在。胸元に下げた木の箱「枡（ます）」に精霊を宿し、その力を借りて戦いや癒し、芸術表現に用いる精霊術（Spirit Art）は、KUKUを象徴する力です。
+          </p>
+          <p>ククノチがなぜ人と交わりKUKUが生まれたのか――その理由はいまだ謎に包まれています。</p>
+        </div>
+        <video autoplay muted loop playsinline poster="public/assets/kuku_village_thumb.jpg" style="width: 100%; border-radius: 24px; box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);">
+          <source src="../kukuvideMP4.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>枡（Masu）</h3>
+          <p>KUKUが持つ象徴的な装具。神ククノチが我が子に与えた御守りとされ、枡の中には契約した精霊が眠ります。祈りや舞などの行為を通じて枡は光を帯び、護り・灯火・楽器など多彩な役割を果たします。</p>
+        </div>
+        <video autoplay muted loop playsinline poster="public/assets/kuku_characters.png" style="width: 100%; border-radius: 24px; box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);">
+          <source src="../masu%20mov.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>精霊（Spirits）</h3>
+          <p>
+            KUKUの世界では、あらゆる自然現象に精霊が宿ります。「光」「風」「水」「火」「土」「花」「影」など、多様な属性を持つエネルギー体です。支配ではなく共鳴の関係で力を借り、心が濁れば沈黙し、心が清ければ共に歌います。枡に宿った精霊は主と共に成長し、未知の力を解放します。
+          </p>
+        </div>
+        <video autoplay muted loop playsinline poster="public/assets/翠根街.JPG" style="width: 100%; border-radius: 24px; box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);">
+          <source src="../精霊.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>樹木の里（Tree Village）</h3>
+          <p>森の奥深く、霧と陽光が入り混じる場所にあるKUKUたちの地上の集落。自然と共に生きる暮らしが何千年も続いています。</p>
+          <p>里の中心には木の神ククノチが生み出したとされる世界樹がそびえ立ち、幹は山よりも太く枝葉は雲を貫くほど高く伸びます。夜になると幹の文様が淡く光り、森全体を照らします。</p>
+        </div>
+        <video autoplay muted loop playsinline poster="public/assets/kuku_village_thumb.jpg" style="width: 100%; border-radius: 24px; box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);">
+          <source src="../樹木の里IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>翠根街（The Undergrove）</h3>
+          <p>翠根街は、世界樹の巨大な根の中に築かれた地下都市です。頭上には絡み合う根が天井のように広がり、その隙間から光苔や光虫の淡い光が零れ、街全体を照らします。</p>
+          <p>通りには樹液で作られた灯り玉や香る木の実の工芸、精霊の宿る器が並び、木槌の音や商人たちの声が交じり合って響きます。地上の樹木の里が静寂と祈りに満ちているのに対し、翠根街は光と音と香りが絶えず流れる、森の地下に息づく“もう一つの世界”。こここそ森の知恵と創造が凝縮されたKUKU文明の心臓部です。</p>
+        </div>
+        <video autoplay muted loop playsinline poster="public/assets/翠根街.JPG" style="width: 100%; border-radius: 24px; box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);">
+          <source src="../翠根街IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="world-section" style="margin-top: 3rem;">
+        <h2>この世界で、あなたの物語を創ろう</h2>
+        <p>
+          KUKUの世界を舞台に、あなただけの物語を紡いでください。スターターパックや設定資料を活用し、Tree VillageとThe Undergrove、そしてキャラクターたちの生活をあなたの表現で描いてください。
+        </p>
+        <div class="guideline-actions" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+          <a class="primary" href="public/assets/KUKU_Starter_Pack.zip">スターターパックをダウンロード</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/ja/characters" target="_blank" rel="noreferrer">キャラクターを見る</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/ja/guidelines" target="_blank" rel="noreferrer">ガイドラインを確認</a>
+        </div>
+      </article>
+
+      <div class="back-link">
+        <a href="contest-lp.html">特設LPへ戻る</a>
+      </div>
+    </section>
+    <script>
+      function toggleLanguageMenu() {
+        const menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+      document.addEventListener('click', (event) => {
+        const menu = document.getElementById('languageMenu');
+        if (!menu) return;
+        const button = menu.previousElementSibling;
+        if (menu && !menu.contains(event.target) && !button.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

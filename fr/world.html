@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panorama du monde KUKU</title>
+    <meta name="description" content="Explorez Tree Village, The Undergrove et les artefacts spirituels qui définissent l’univers de KUKU." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../public/favicon.ico" />
+    <style>
+      :root {
+        --primary: #0b3d2e;
+        --sand: #f6f1ea;
+        --ink: #0f172a;
+        --line: rgba(15, 23, 42, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--sand);
+        color: var(--ink);
+        line-height: 1.8;
+      }
+      .world-hero {
+        min-height: 60vh;
+        background: linear-gradient(135deg, rgba(11, 61, 46, 0.9), rgba(5, 10, 8, 0.9)),
+          url('../public/assets/kuku_village_thumb.jpg') center/cover;
+        color: white;
+        text-align: center;
+        padding: 6rem 1.5rem 5rem;
+      }
+      .world-hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        margin-bottom: 1rem;
+      }
+      .world-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      .container {
+        width: min(1200px, 90%);
+        margin: 0 auto;
+        padding: 4rem 0;
+      }
+      .header {
+        background: #0B3D2E;
+        padding: 0.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        height: 42px;
+      }
+      .cta-button {
+        background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+      }
+      .story-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 1px solid var(--line);
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.08);
+        margin-bottom: 2.5rem;
+      }
+      .story-section h2,
+      .story-section h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .guideline-actions a {
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.9rem 2.2rem;
+        border-radius: 999px;
+      }
+      .guideline-actions .primary {
+        background: var(--primary);
+        color: white;
+      }
+      .guideline-actions .secondary {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+      }
+      .back-link {
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .back-link a {
+        display: inline-flex;
+        padding: 0.85rem 2.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      video {
+        width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <img src="../public/assets/KUKU_logo.png" alt="KUKU" class="logo" />
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="language-selector" style="position: relative;">
+            <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              🌐 Français
+            </button>
+            <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
+              <a href="../world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
+              <a href="../en/world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+              <a href="world.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">Rejoindre la communauté</a>
+        </div>
+      </div>
+    </header>
+    <section class="world-hero">
+      <h1>Panorama du monde KUKU</h1>
+      <p>Tree Village (surface) et The Undergrove (cité des racines) dévoilent comment les woodfolk vivent avec la lumière, la mémoire et les esprits.</p>
+    </section>
+
+    <section class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p style="font-size: 0.9rem; letter-spacing: 0.2em; color: rgba(11, 61, 46, 0.6); margin-bottom: 0.5rem;">🌳 KUKU WORLD</p>
+        <h2 style="font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0; color: var(--primary);">Qu’est-ce que KUKU ?</h2>
+      </div>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Woodfolk KUKU</h3>
+          <p>Les KUKU sont nés entre la divinité arboricole Kukunochi et les humains. Leur corps mi-organique mi-bois se régénère en absorbant la lumière.</p>
+          <p>Forts comme les arbres et doux comme les humains, ils vivent avec la forêt. Beaucoup portent une boîte sacrée, le <em>masu</em>, où résident les esprits. Canaliser ces esprits dans le combat, la guérison ou l’art s’appelle la Spirit Art, signature des KUKU.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_village_thumb.jpg">
+          <source src="../kukuvideMP4.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Masu (reliquaire)</h3>
+          <p>Le <em>masu</em> serait offert par Kukunochi à chaque enfant KUKU. Chaque boîte abrite un esprit. Lorsque son porteur chante, combat ou prie, le masu s’illumine, devenant bouclier, lanterne ou instrument.</p>
+          <p>Le veinage du bois évolue avec le cœur du KUKU. Quand l’esprit s’éveille, la boîte semble respirer comme un être vivant.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_characters.png">
+          <source src="../masu%20mov.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Esprits</h3>
+          <p>Dans l’univers KUKU, chaque phénomène naturel abrite un esprit : lumière, vent, eau, feu, terre, fleurs ou ombres. Leur lien avec les KUKU est une résonance, non une domination.</p>
+          <p>Un cœur troublé fait taire l’esprit ; un cœur limpide le fait chanter. Les esprits logent dans le masu et grandissent avec leur partenaire, libérant des pouvoirs inconnus lorsqu’ils vibrent à l’unisson.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/翠根街.JPG">
+          <source src="../精霊.mov" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>Tree Village</h3>
+          <p>Tree Village est le village de surface où les KUKU vivent depuis des millénaires, entre brume et rayons. Au centre se dresse l’arbre-monde enfanté par Kukunochi : un tronc plus large qu’une montagne et des branches qui transpercent les nuages.</p>
+          <p>La nuit, les motifs de l’écorce diffusent une lumière douce qui éclaire toute la forêt.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/kuku_village_thumb.jpg">
+          <source src="../樹木の里IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div>
+          <h3>The Undergrove</h3>
+          <p>The Undergrove est une cité souterraine creusée dans les racines colossales de l’arbre-monde. Les racines s’entrelacent au-dessus des rues, laissant filtrer la lueur des mousses et des lucioles vertes.</p>
+          <p>On y troque des lampes de résine, des parfums de fruits, des récipients habités par les esprits. Tandis que Tree Village inspire le calme et la prière, The Undergrove pulse de lumière, de sons et d’effluves : le cœur créatif de la civilisation forestière.</p>
+        </div>
+        <video autoplay muted loop playsinline poster="../public/assets/翠根街.JPG">
+          <source src="../翠根街IV.MP4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="story-section" style="margin-top: 3rem;">
+        <h2>Écrivez votre histoire</h2>
+        <p>Servez-vous de Tree Village, de The Undergrove et des fiches personnages officielles comme tremplin. Remixez-les avec votre sensibilité et laissez les esprits guider votre récit.</p>
+        <div class="guideline-actions" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+          <a class="primary" href="../public/assets/KUKU_Starter_Pack.zip">Télécharger le starter pack</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/en/characters" target="_blank" rel="noreferrer">Voir les personnages</a>
+          <a class="secondary" href="https://kuku-official.vercel.app/en/guidelines" target="_blank" rel="noreferrer">Consulter les guidelines</a>
+        </div>
+      </article>
+
+      <div class="back-link">
+        <a href="contest-lp.html">Retour à la LP concours</a>
+      </div>
+    </section>
+    <script>
+      function toggleLanguageMenu() {
+        const menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+      document.addEventListener('click', (event) => {
+        const menu = document.getElementById('languageMenu');
+        if (!menu) return;
+        const button = menu.previousElementSibling;
+        if (menu && !menu.contains(event.target) && !button.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

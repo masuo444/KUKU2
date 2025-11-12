@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUKU Global AI Creative Challenge</title>
+    <meta
+      name="description"
+      content="千年先へ、KUKUの物語を紡げ。AIと多様な創作手法で未来の世界観を共創するグローバル・ファンアート・チャレンジ。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="public/favicon.ico" />
+    <style>
+      :root {
+        --primary: #0b3d2e;
+        --ink: #0f172a;
+        --accent: #7fb069;
+        --sand: #f6f1ea;
+        --muted: rgba(15, 23, 42, 0.65);
+        --line: rgba(15, 23, 42, 0.08);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+        background: radial-gradient(circle at top, rgba(127, 176, 105, 0.18), transparent 55%), #020504;
+        color: white;
+        line-height: 1.8;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .container {
+        width: min(1200px, 90%);
+        margin: 0 auto;
+      }
+      .header {
+        background: #0B3D2E;
+        padding: 0.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        height: 42px;
+      }
+      .cta-button {
+        background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+      }
+      header.hero {
+        position: relative;
+        min-height: 100vh;
+        padding: 4rem 0 6rem;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: radial-gradient(circle at 20% 20%, rgba(127, 176, 105, 0.25), transparent 65%), #08120f;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('public/assets/masu-image.jpg') center/cover;
+        opacity: 0.22;
+        filter: saturate(1.1);
+      }
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(2, 5, 4, 0.75), rgba(2, 5, 4, 0.95));
+      }
+      .hero-content {
+        position: relative;
+        width: min(960px, 90%);
+        margin: 0 auto;
+        text-align: center;
+        z-index: 1;
+      }
+      .hero-chip {
+        display: inline-flex;
+        gap: 0.45rem;
+        align-items: center;
+        padding: 0.45rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 999px;
+        letter-spacing: 0.4em;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(3rem, 6vw, 4.8rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+      }
+      .hero .lead {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+      .button-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 2.6rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      }
+      .button-pill.primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 18px 45px rgba(4, 20, 15, 0.3);
+      }
+      .button-pill.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: white;
+      }
+      .button-pill.light-outline {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        background: white;
+      }
+      .button-pill:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 60px rgba(4, 20, 15, 0.35);
+      }
+      .world-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+      .hero-metrics div {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: left;
+      }
+      .hero-metrics span {
+        display: block;
+        font-size: 2rem;
+        font-weight: 900;
+      }
+      .section {
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .section.light {
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(241, 236, 226, 0.95));
+        color: var(--primary);
+      }
+      h2.section-title {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        margin-bottom: 1rem;
+      }
+      p.section-lead {
+        margin-bottom: 3rem;
+        color: var(--muted);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .intro-card {
+        background: white;
+        border-radius: 32px;
+        padding: 2.8rem;
+        color: var(--primary);
+        box-shadow: 0 40px 80px rgba(11, 61, 46, 0.1);
+      }
+      .intro-card h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+      .intro-card p {
+        margin: 0;
+      }
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+      }
+      .video-section {
+        background: radial-gradient(circle at 30% 20%, rgba(127, 176, 105, 0.2), rgba(1, 3, 2, 0.95));
+        padding: 2.5rem 0 1rem;
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+      .video-frame {
+        position: relative;
+        border-radius: 36px;
+        overflow: hidden;
+        box-shadow: 0 35px 80px rgba(2, 5, 4, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        aspect-ratio: 16 / 9;
+      }
+      .video-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .category-card {
+        border-radius: 32px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0));
+        box-shadow: 0 25px 60px rgba(3, 7, 6, 0.4);
+      }
+      .category-chip {
+        display: inline-flex;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.08em;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+      .criteria {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        display: grid;
+        gap: 0.8rem;
+      }
+      .criteria div {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+      }
+      .incentive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+      .incentive-card {
+        border-radius: 32px;
+        padding: 2.5rem;
+        background: white;
+        color: var(--primary);
+        box-shadow: 0 35px 80px rgba(11, 61, 46, 0.15);
+      }
+      .incentive-card span {
+        font-size: 2.3rem;
+        font-weight: 900;
+        display: block;
+        margin: 0.6rem 0;
+      }
+      .badge-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1rem;
+      }
+      .badge-list span {
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(11, 61, 46, 0.1);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .world-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+      .world-card {
+        background: linear-gradient(160deg, white, #f4efe5);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 30px 70px rgba(15, 23, 42, 0.1);
+        border: 1px solid var(--line);
+      }
+      .world-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .world-card div {
+        padding: 1.8rem;
+        color: var(--primary);
+      }
+      .world-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.6rem;
+      }
+      .world-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .world-section {
+        background: white;
+        border-radius: 24px;
+        padding: 2rem;
+        color: var(--primary);
+        border: 1px solid var(--line);
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+      .world-section h3 {
+        margin-top: 0;
+      }
+      .world-section ul {
+        margin: 1rem 0 0;
+        padding-left: 1.1rem;
+        color: rgba(15, 23, 42, 0.8);
+      }
+      .image-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+      .image-card {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        min-height: 280px;
+        box-shadow: 0 35px 70px rgba(3, 7, 6, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(1.1);
+      }
+      .image-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, rgba(2, 5, 4, 0.25), rgba(2, 5, 4, 0.75));
+      }
+      .image-card p {
+        position: absolute;
+        inset: auto 1.25rem 1.25rem;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        z-index: 1;
+      }
+      .image-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 45px 90px rgba(3, 7, 6, 0.45);
+      }
+      .judging-wrapper {
+        display: grid;
+        gap: 2rem;
+      }
+      .judging-copy {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 32px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .judges {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+      .judge-card {
+        text-align: center;
+        padding: 1.8rem;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .judge-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 3px solid rgba(255, 255, 255, 0.35);
+      }
+      .guideline-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .guideline-card {
+        border-radius: 28px;
+        padding: 2rem;
+        background: linear-gradient(160deg, white, #f4efe5);
+        color: var(--primary);
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 70px rgba(15, 23, 42, 0.08);
+      }
+      .guideline-card h3 {
+        margin-top: 0;
+      }
+      .guideline-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.2rem 0 0;
+      }
+      .guideline-card li {
+        display: flex;
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+      .guideline-card li::before {
+        content: '✦';
+        color: var(--accent);
+      }
+      .guideline-note {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        border-radius: 24px;
+        background: rgba(11, 61, 46, 0.08);
+        font-size: 0.95rem;
+      }
+      .guideline-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .cta-banner {
+        background: linear-gradient(120deg, rgba(11, 61, 46, 0.92), rgba(5, 10, 8, 0.92)),
+          url('public/assets/kuku_village_thumb.jpg') center/cover;
+        border-radius: 40px;
+        padding: 4rem 2rem;
+        color: white;
+        text-align: center;
+        box-shadow: 0 40px 90px rgba(3, 7, 6, 0.5);
+      }
+      footer {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        color: rgba(248, 250, 252, 0.6);
+        font-size: 0.9rem;
+      }
+      @media (max-width: 640px) {
+        .hero-cta {
+          flex-direction: column;
+        }
+        .guideline-card li {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner" style="display: flex; justify-content: space-between; align-items: center;">
+        <img src="public/assets/KUKU_logo.png" alt="KUKU" class="logo" />
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="language-selector" style="position: relative;">
+            <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              🌐 日本語
+            </button>
+            <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
+              <a href="contest-lp.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
+              <a href="en/contest-lp.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+              <a href="fr/contest-lp.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">コミュニティに参加</a>
+        </div>
+      </div>
+    </header>
+    <header class="hero">
+      <div class="hero-content">
+        <span class="hero-chip" style="font-size: 1.15rem; padding: 0.6rem 1.8rem; letter-spacing: 0.6em;">GLOBAL FAN ART CHALLENGE</span>
+        <h1>千年先へ、KUKUの物語を紡げ。</h1>
+        <p class="lead">
+          世界中のクリエイターが、KUKUのオープンIPを手描き / 実写 / コスプレ / AI など好きなスタイルで再解釈するグローバル・クリエイティブ・チャレンジ。ムーブメントの最初の波に乗り、あなたの創造性を公式IPの歴史に刻もう。（AI活用ももちろんOK）
+        </p>
+        <div class="hero-cta">
+          <a class="button-pill primary" href="https://forms.gle/2iW6RiHFsK8JW8QG9" target="_blank" rel="noreferrer">APPLY NOW / 今すぐ応募する</a>
+          <a class="button-pill secondary" href="#guidelines">ガイドラインを見る</a>
+          <a class="button-pill secondary" href="index.html">KUKU公式サイト</a>
+        </div>
+        <p style="opacity: 0.85">総額 $500 / 最優秀賞1名・優秀賞1名 / 応募締切: 2026年1月11日</p>
+        <div class="hero-metrics">
+          <div>
+            <span>$500</span>
+            賞金総額 + 公式特集
+          </div>
+          <div>
+            <span>1 / 1</span>
+            Grand Prize & Excellence Prize
+          </div>
+          <div>
+            <span>1.11</span>
+            締切: 2026年1月11日 (UTC+9)
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="video-grid" style="max-width: 1000px; margin: 0 auto;">
+          <div class="video-frame">
+            <video autoplay muted loop playsinline poster="public/assets/kuku_village_thumb.jpg">
+              <source src="../樹木の里IV.MP4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-frame">
+            <video autoplay muted loop playsinline poster="public/assets/masu-image.jpg">
+              <source src="../KUKU IV.MP4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="world-detail">
+      <div class="container">
+        <h2 class="section-title">ムーブメントへの招待</h2>
+        <p class="section-lead">
+          KUKUは、樹木の里や翠根街を舞台にしたオープンIP。国や言語を越えて誰でもアクセスでき、最先端のテクノロジーと物語づくりで世界へ広がる「開かれた文化のエコシステム」を目指しています。
+        </p>
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>KUKUとは？ — 開かれた創造の場</h3>
+            <p>
+              誰もが自由にアクセスできるオープンIPとして、公式設定や世界観を共創し続けるプロジェクトです。既存の権威に縛られず、世界中のクリエイターが自分のスタイルでKUKUの物語を拡張できます。
+            </p>
+          </article>
+          <article class="intro-card">
+            <h3>歴史の「最初の一筆」</h3>
+            <p>
+              あなたは単なる応募者ではありません。KUKUの歴史の「最初の一筆」を担う初期メンバーです。AIでも手描きでも構いません。あなたの作品を公式ストーリー / 設定として世界に送り出す最大のチャンスです。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container">
+        <h2 class="section-title">KUKUの世界観</h2>
+        <p class="section-lead">
+          樹木の里（Tree Village）と翠根街（Root City）が交差する、光と記憶の物語。以下のキーエリアと詳細を参考に、あなたの作品に独自の解釈を加えてください。
+        </p>
+        <div class="world-grid">
+          <article class="world-card">
+            <img src="public/assets/kuku_village_thumb.jpg" alt="Tree Village" loading="lazy" />
+            <div>
+              <h3>Tree Village</h3>
+              <p>巨大な樹と木造の暮らしが広がる地上のコミュニティ。朝焼けの光と風の音が、KUKUたちの日常を彩ります。</p>
+            </div>
+          </article>
+          <article class="world-card">
+            <img src="public/assets/翠根街.JPG" alt="Root City" loading="lazy" />
+            <div>
+              <h3>Root City</h3>
+              <p>地中深くに広がる光の街。樹木の根に宿る記憶が粒子となり、都市全体を照らすミステリアスな空間です。</p>
+            </div>
+          </article>
+          <article class="world-card">
+            <img src="public/assets/kuku_characters.png" alt="KUKU Characters" loading="lazy" />
+            <div>
+              <h3>Key Characters</h3>
+              <p>KUKUたちは誰でも自由に使えるオープンキャラクター。公式素材をベースに、あなたのスタイルで物語を拡張してください。</p>
+            </div>
+          </article>
+        </div>
+        <div class="world-actions" style="margin-top: 2.5rem;">
+          <a class="button-pill primary" href="world.html" target="_blank" rel="noreferrer">詳細を見る</a>
+          <a class="button-pill light-outline" href="https://forms.gle/2iW6RiHFsK8JW8QG9" target="_blank" rel="noreferrer">応募する</a>
+        </div>
+      </div>
+    </section>
+
+***
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">コンテスト部門と評価軸</h2>
+        <p class="section-lead">表現手法は問いません。AI利用の有無は任意ですが、使用した場合は必ず申告してください。</p>
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="category-chip">KUKU Global Fan Art</span>
+            <h3>KUKUグローバル・ファン・アート部門</h3>
+            <p>手描き / CG / 動画 / 音楽 / 実写 / コスプレ / AI生成 など何でもOK。KUKU愛と独創的な解釈で、あなたの感性を全開にした作品を募集します（AI活用も歓迎）。</p>
+            <div class="criteria">
+              <div><span>キャラクター設定のリサーチと解釈</span><span>40%</span></div>
+              <div><span>独創性・斬新さ</span><span>30%</span></div>
+              <div><span>世界観づくりと完成度</span><span>30%</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container">
+        <h2 class="section-title">参加インセンティブ</h2>
+        <p class="section-lead">最優秀賞と優秀賞を各1名ずつ表彰。作品の公式採用や証明書発行でキャリアを後押しします。</p>
+        <div class="incentive-grid">
+          <article class="incentive-card">
+            <h3>最優秀賞（1名）</h3>
+            <span>$400</span>
+            <p>+ KUKU公式IPへの作品採用交渉権。あなたの作品が正式なKUKU公式ストーリー / 設定に編入されるチャンス。</p>
+            <div class="badge-list">
+              <span>Official Adoption</span>
+              <span>Global Release</span>
+            </div>
+          </article>
+          <article class="incentive-card">
+            <h3>優秀賞（1名）</h3>
+            <span>$100</span>
+            <p>+ KUKU公式SNSでの大々的な作品紹介。世界へ向けた露出を提供します。</p>
+            <div class="badge-list">
+              <span>Official Feature</span>
+              <span>Interview</span>
+            </div>
+          </article>
+          <article class="incentive-card">
+            <h3>ファイナリスト特典</h3>
+            <span>Certificate</span>
+            <p>KUKU公式クリエイティブ証明書を発行。ポートフォリオの信頼性を強化します。</p>
+            <div class="badge-list">
+              <span>Portfolio Ready</span>
+              <span>Global Recognition</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="guidelines">
+      <div class="container">
+        <h2 class="section-title">応募要項 & ガイドライン</h2>
+        <p class="section-lead">AI利用は任意。KUKU素材を使い、制作プロセスを正確に記載してください。全クリエイターを歓迎します。</p>
+        <div class="guideline-grid">
+          <article class="guideline-card">
+            <h3>応募条件ハイライト</h3>
+            <ul>
+              <li>KUKU IPの公式素材を必ず使用してください。手描き / アナログ / 実写 / コスプレ / デジタル問わず応募歓迎（AI活用も任意でOK）。</li>
+              <li>AIを使用した場合は、ツール名と制作プロセスを必ず申告してください。</li>
+              <li>KUKU IPガイドラインを厳守し、名誉を毀損する表現は禁止です。</li>
+            </ul>
+          </article>
+          <article class="guideline-card">
+            <h3>尺・フォーマット</h3>
+            <ul>
+              <li>60秒以内（+5秒許容） / 16:9 もしくは 9:16。</li>
+              <li>公式フォームにファイル（最大100MB）または高画質リンクを添付してください。</li>
+              <li>生成AIの使用率は不問で、100% AI作品でも問題ありません。</li>
+              <li>誹謗中傷・差別表現・著作権侵害は失格対象です。</li>
+            </ul>
+          </article>
+          <article class="guideline-card">
+            <h3>著作権と利用</h3>
+            <ul>
+              <li>著作権はクリエイターに帰属します。</li>
+              <li>主催者はプロモーション目的で作品を無償利用する権利を保有します。</li>
+              <li>AI利用時は権利関係を必ず確認し、申告内容を正しく記載してください。</li>
+            </ul>
+          </article>
+        </div>
+        <div class="guideline-note">
+          KUKU公式素材のダウンロードおよび詳細規約（日本語・英語）は以下より取得できます。すべての応募者に公平な審査機会を提供するため、フォーム内の入力事項には正確にご回答ください。
+        </div>
+        <div class="guideline-actions">
+          <a class="button-pill primary" href="public/assets/KUKU_Starter_Pack.zip">KUKU素材をダウンロード</a>
+          <a class="button-pill light-outline" href="https://kuku-official.vercel.app/ja/license" target="_blank" rel="noreferrer">ガイドライン全文</a>
+          <a class="button-pill light-outline" href="https://forms.gle/2iW6RiHFsK8JW8QG9" target="_blank" rel="noreferrer">応募フォーム</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-banner">
+        <h3 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem">The future of KUKU rests in your hands.</h3>
+        <p>あなたの一作が、KUKUの歴史に刻まれる最初の一筆です。今すぐ応募して、壮大な文化の旅の第一歩を踏み出してください。</p>
+        <div class="hero-cta" style="justify-content: center; margin-top: 2rem">
+          <a class="button-pill primary" href="https://forms.gle/2iW6RiHFsK8JW8QG9" target="_blank" rel="noreferrer">APPLY NOW / 今すぐ応募する</a>
+          <a class="button-pill secondary" href="https://www.instagram.com/kukutree99" target="_blank" rel="noreferrer">相談する</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 FOMUS / KUKU Contest. All rights reserved. 作品の著作権は応募者に帰属します。
+    </footer>
+    <script>
+      function toggleLanguageMenu() {
+        const menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+      document.addEventListener('click', (event) => {
+        const menu = document.getElementById('languageMenu');
+        if (!menu) return;
+        const button = menu.previousElementSibling;
+        if (menu && !menu.contains(event.target) && !button.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

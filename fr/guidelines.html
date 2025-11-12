@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directives d’utilisation de KUKU</title>
+    <meta name="description" content="Règles d’usage de l’IP ouverte KUKU : périmètre, utilisation commerciale, IA, crédits et collaborations." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../public/favicon.ico" />
+    <style>
+      :root {
+        --primary: #0b3d2e;
+        --sand: #f6f1ea;
+        --ink: #0f172a;
+        --line: rgba(15, 23, 42, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+        background: var(--sand);
+        color: var(--ink);
+        line-height: 1.8;
+      }
+      .hero {
+        padding: 4rem 1.5rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(11, 61, 46, 0.92), rgba(5, 10, 8, 0.92));
+        color: white;
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 5vw, 3.8rem);
+        margin-bottom: 0.5rem;
+      }
+      .hero p {
+        opacity: 0.85;
+      }
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+        padding: 3rem 0 4rem;
+      }
+      .header {
+        background: #0B3D2E;
+        padding: 0.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        height: 42px;
+      }
+      .cta-button {
+        background: linear-gradient(135deg, #98D8A3 0%, #7fb069 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+      }
+      .guideline-card {
+        background: white;
+        border-radius: 28px;
+        border: 1px solid var(--line);
+        box-shadow: 0 25px 80px rgba(15, 23, 42, 0.08);
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      .guideline-card h2 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+      .guideline-card ul {
+        padding-left: 1.3rem;
+      }
+      .guideline-list li {
+        margin-bottom: 0.6rem;
+      }
+      .cta {
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .cta a {
+        display: inline-flex;
+        padding: 0.9rem 2.3rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 0.5rem;
+      }
+      .cta .primary {
+        background: var(--primary);
+        color: white;
+      }
+      .cta .outline {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <img src="../public/assets/KUKU_logo.png" alt="KUKU" class="logo" />
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="language-selector" style="position: relative;">
+            <button onclick="toggleLanguageMenu()" style="background: none; border: 2px solid white; color: white; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+              🌐 Français
+            </button>
+            <div id="languageMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 1000;">
+              <a href="../guidelines.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 600;">🇯🇵 日本語</a>
+              <a href="../en/guidelines.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none; border-bottom: 1px solid #eee;">🇬🇧 English</a>
+              <a href="guidelines.html" style="display: block; padding: 0.75rem 1rem; color: #0B3D2E; text-decoration: none;">🇫🇷 Français</a>
+            </div>
+          </div>
+          <a href="https://chat.whatsapp.com/CDNPp9KoK3A38Gw7kXPmKD?mode=wwt" class="cta-button" target="_blank">Rejoindre la communauté</a>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <p>🌿 Directives d’utilisation de KUKU</p>
+      <h1>Directives d’utilisation de KUKU</h1>
+      <p>Dernière mise à jour : novembre 2025 / Éditeur : FOMUS (Représentant : MaSU)</p>
+    </section>
+
+    <section class="container">
+      <article class="guideline-card">
+        <h2>1. Introduction</h2>
+        <p>KUKU est une IP ouverte que chacun peut utiliser librement. Pensée pour l’ère de l’IA, cette initiative de co-création accueille tous les créateurs. Ces directives posent l’équilibre entre liberté et respect.</p>
+      </article>
+
+      <article class="guideline-card">
+        <h2>2. Périmètre d’utilisation</h2>
+        <p>✅ Ce que vous pouvez faire gratuitement et sans autorisation préalable :</p>
+        <ul class="guideline-list">
+          <li>Utiliser KUKU dans l’animation, la vidéo, l’illustration, la musique, le jeu ou des œuvres générées par IA.</li>
+          <li>Créer des fan arts, remixes et œuvres dérivées inspirés de KUKU.</li>
+          <li>Former ou recomposer avec des outils IA (Stable Diffusion, Runway, Midjourney, etc.).</li>
+          <li>Partager vos créations sur les réseaux, en exposition, dans l’éducation ou la recherche.</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>3. Utilisation commerciale</h2>
+        <p>L’usage commercial est autorisé : vente d’œuvres, NFTs, monétisation vidéo, produits dérivés, etc., tant que vous respectez ces règles.</p>
+        <ul class="guideline-list">
+          <li>Citez toujours <strong>© KUKU / FOMUS</strong> dans l’œuvre ou sa description.</li>
+          <li>Au-delà de 150 000 USD de revenus annuels, contactez <a href="https://www.instagram.com/kukutree99" target="_blank" rel="noreferrer">@kukutree99</a> pour envisager une collaboration ou une supervision officielle.</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>4. Usages interdits</h2>
+        <ul class="guideline-list">
+          <li>Contenus pornographiques, violents, discriminatoires ou incitant à la haine religieuse/politique.</li>
+          <li>Attaques, diffamations ou harcèlement envers des individus ou des groupes.</li>
+          <li>Affirmer être « officiel » sans validation de FOMUS.</li>
+          <li>Enregistrer de faux labels ou sociétés avec le nom ou le logo KUKU.</li>
+          <li>Utiliser l’œuvre d’autrui sans consentement ou l’aspirer pour l’entraînement IA.</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>5. Politique IA</h2>
+        <ul class="guideline-list">
+          <li>Le Creator Pack officiel peut être utilisé pour l’entraînement ou le remix IA.</li>
+          <li>Les sorties vous appartiennent : publiez et vendez-les librement.</li>
+          <li>Pour entraîner sur l’œuvre KUKU d’un tiers, obtenez d’abord son accord.</li>
+          <li>En publiant un modèle entraîné sur KUKU, indiquez « trained with KUKU materials ».</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>6. Droits d’auteur</h2>
+        <ul class="guideline-list">
+          <li>FOMUS (représentant : MaSU) détient les droits sur les designs principaux de KUKU.</li>
+          <li>Les droits des créations dérivées ou commerciales que vous réalisez vous appartiennent.</li>
+          <li>Toute redistribution, revente ou enregistrement qui enfreint les droits de FOMUS est prohibée.</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>7. Crédits</h2>
+        <p>Veuillez mentionner :</p>
+        <p><strong>© KUKU / FOMUS</strong></p>
+        <p>Aucun autre crédit n’est requis.</p>
+      </article>
+
+      <article class="guideline-card">
+        <h2>8. Entreprises / éducation / institutions</h2>
+        <p>Les organisations peuvent utiliser KUKU pour des expositions, cours, événements ou projets dans le cadre de ces directives. Merci de contacter <a href="https://www.instagram.com/kukutree99" target="_blank" rel="noreferrer">@kukutree99</a> pour :</p>
+        <ul class="guideline-list">
+          <li>Grandes campagnes, publicités ou lancements produits.</li>
+          <li>Co-branding avec le logo ou les personnages KUKU.</li>
+          <li>Séries NFT ou actifs numériques.</li>
+          <li>Projets se présentant comme « collaboration officielle » ou « sous supervision FOMUS ».</li>
+          <li>Projets générant plus de 150 000 USD par an.</li>
+        </ul>
+      </article>
+
+      <article class="guideline-card">
+        <h2>9. Collaborations</h2>
+        <p>FOMUS accueille les collaborations officielles avec entreprises, marques, artistes et institutions éducatives.</p>
+        <p>🤝 Exemples : coproduction d’animation/MV, produits exclusifs, programmes éducatifs, expositions, partenariats territoriaux. Envoyez votre proposition via <a href="https://www.instagram.com/kukutree99" target="_blank" rel="noreferrer">@kukutree99</a>.</p>
+        <p>🌍 Site officiel : <a href="https://kuku.fomusglobal.com/en/index.html" target="_blank" rel="noreferrer">https://kuku.fomusglobal.com/en/index.html</a></p>
+      </article>
+
+      <article class="guideline-card">
+        <h2>10. Éthique créative</h2>
+        <p>KUKU explore les thèmes « forêt & lumière » et « vie & régénération ». Faites preuve de respect, de sincérité et d’originalité pour que votre œuvre devienne une nouvelle parcelle de la forêt KUKU.</p>
+      </article>
+
+      <article class="guideline-card">
+        <h2>11. Révisions</h2>
+        <p>Ces directives évolueront avec les changements sociaux, technologiques et culturels. La version la plus récente sera publiée sur le site officiel.</p>
+        <ul class="guideline-list">
+          <li>📍 Site officiel : <a href="https://kuku.fomusglobal.com/en/index.html" target="_blank" rel="noreferrer">https://kuku.fomusglobal.com/en/index.html</a></li>
+          <li>📍 Tag : #KUKUART</li>
+          <li>📍 Produit par : FOMUS (MaSU)</li>
+          <li>📍 Contact : <a href="https://www.instagram.com/kukutree99" target="_blank" rel="noreferrer">@kukutree99</a></li>
+          <li>📍 Crédit : © KUKU / FOMUS</li>
+        </ul>
+      </article>
+
+      <div class="cta">
+        <a class="primary" href="https://forms.gle/2iW6RiHFsK8JW8QG9" target="_blank" rel="noreferrer">Formulaire d’inscription</a>
+        <a class="outline" href="contest-lp.html">Retour à la page concours</a>
+      </div>
+  </section>
+  <script>
+    function toggleLanguageMenu() {
+      const menu = document.getElementById('languageMenu');
+      menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+    }
+    document.addEventListener('click', (event) => {
+      const menu = document.getElementById('languageMenu');
+      if (!menu) return;
+      const button = menu.previousElementSibling;
+      if (menu && !menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+  </body>
+</html>
